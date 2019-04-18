@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int secretNumber, guess = 0;//guess is initialized to 0
-
+        boolean hide = false;
         secretNumber = 123;
 
         System.out.println("I'm thinking of a number between 1 and 1000");
@@ -17,6 +17,7 @@ public class Main {
         {
             if (guess == 5) {
                 System.out.println("See you soon!");
+                hide=true;
                 break;
             }
 
@@ -28,8 +29,9 @@ public class Main {
 
 
         }
-
-    System.out.println("You are correct. You win a prize!");
+        if (hide == false) {
+            System.out.println("You are correct. You win a prize!");
+        }
         keyboard.close();
     }
 }
